@@ -1,0 +1,238 @@
+/*
+The cleverer parts of this stylesheet came from
+The Layout Reservoir - well worth a look.
+http://www.bluerobot.com/web/layouts/
+*/
+
+body {
+	color:#333;
+	background-color: #D9D0C3;
+	margin:0px;
+	padding:0px;
+	font:11px verdana, arial, helvetica, sans-serif;
+}
+
+h1 {
+	background-color: #BFB8AC;
+	color: #ffffff;
+	font-family: trebuchet ms, verdana, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: left;
+	padding: 3px 0px 3px 10px;
+	margin-bottom: 0px;
+	margin-top: 0px; 
+}
+	
+#spamform
+{
+	background:#EED0C3;
+	padding:5px;
+}
+
+p {
+	font:11px/20px verdana, arial, helvetica, sans-serif;
+	margin:0px 10px 10px 10px;
+}
+
+select{
+	font:11px/20px verdana, arial, helvetica, sans-serif;
+}
+
+label{
+	font-weight:bold;
+}
+
+div.syntax{
+background:white;
+}
+
+div.syntax a{
+	font-family: 'Courier New', Courier, monospace; 
+	font-weight: normal;
+	color:black;
+	text-decoration:underline;
+}
+
+a {
+	color:#474C7F;
+	font-size:11px;
+	font-family:verdana, arial, helvetica, sans-serif;
+	font-weight:600;
+	text-decoration:none;
+}
+
+a:link {color:#474C7F;}
+a:visited {color:#474C7F;}
+a:hover {text-decoration:underline;}
+  
+h1 a{color:white; text-decoration:underline;font-weight:bold;}
+h1 a:link{color:white;}
+h1 a:visited{color:white;}
+h1 a:hover{color:yellow;background-color:transparent;}
+
+#content h1
+{
+	background-color: #807A73;
+
+}
+
+#titlebar a{color:white; text-decoration:underline;font-weight:bold;}
+#titlebar a:link{color:white;}
+#titlebar a:visited{color:white;}
+#titlebar a:hover{color:yellow;background-color:transparent;}
+
+a.code {
+	text-decoration:underline; 
+	font-family:courier, fixed;
+	font-weight:normal;}
+a.code:link {color:#09c;}
+a.code:visited {color:#07a;}
+a.code:hover {text-decoration:underline;}
+
+
+
+
+code { font-size:12px;width:98%;}
+
+.codeedit {	font-size:12px;width:98%;}
+
+
+#titlebar {
+	font-family:Georgia,Times New Roman,serif;
+	font-size:20px;
+	padding: 0px 0px 0px 5px;
+	height:24px;
+	background-color: #807A73;
+	color: #fff;
+	margin-bottom: 11px;
+}
+
+.nav { margin: 0px 5px 0px 5px; }
+	
+
+
+#Content>p {margin:0px;}
+#Content>p+p {text-indent:30px;}
+
+#content {
+	margin:0px 0px 50px 150px;
+	padding:5px;
+}
+
+#menu {
+	position:absolute;
+	top:24px;
+	left:0px;
+	width:162px;
+	background-color: #FFF5E6;
+	line-height:17px;
+	overflow: hidden;
+
+	/* IE5 Hack */
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	width:140px;
+}
+
+/* be nice to Opera 5 */
+body>#Menu {width:150px;}
+
+#menu>p {margin:5px 10px 5px 10px;line-height:1.5em;}
+
+li.highlight{ background-color: #D9D0C3; }
+
+#menu ul {
+	margin-left:15px;
+	margin-top:0px;
+	padding-left:0px;
+}
+
+#menu li {
+	list-style-type: square;
+	line-height: 11px;
+	padding-bottom: 3px;
+}
+
+
+#namebox
+{
+	float:left;
+}
+
+#expirybox
+{
+	float:left;
+	margin-left:20px;
+}
+
+#expirybox label
+{
+	padding-left:3px;
+	padding-right:3px;
+	
+}
+
+#expirybox label.current
+{
+	background:#FFF5E6;
+	
+}
+
+#expiryinfo
+{
+	color:#000000;
+	font-style:italic;
+}
+
+#email
+{
+	display:none;
+}
+#end
+{
+	clear:both;
+}
+
+table.diff 
+{
+	background:white;
+}
+
+table.diff td
+{
+	text-align:right;
+	padding-left:3px;
+	padding-right:3px;
+	font-size:8pt;
+}
+
+table.diff td.code
+{
+	text-align:left;
+	font-family: 'Courier New', Courier, monospace; 
+	font-weight: normal;
+}
+
+table.diff td.code pre
+{
+	margin:0;
+	padding:0;
+}
+
+table.diff tr.new
+{
+	background:#ddddff;
+}
+table.diff tr.old
+{
+	background:#ffdddd;
+}
+table.diff tr.hidenew
+{
+	display:none;
+}
+table.diff tr.hideold
+{
+	display:none;
+}

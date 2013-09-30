@@ -1,0 +1,5 @@
+To keep the size of the pastebin source distribution small, the GeSHi
+documentation has been removed. GeShi comes with copious documentation,
+see http://qbnz.com/highlighter/ for details.
+
+

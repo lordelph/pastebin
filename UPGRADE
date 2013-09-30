@@ -1,0 +1,13 @@
+Upgrading Pastebin
+------------------
+
+v0.4x to 0.5
+------------
+
+The database has some extra columns, add and initialise them as follows:
+
+ALTER TABLE pastebin 
+	ADD COLUMN expires DATETIME,
+	ADD COLUMN expiry_flag ENUM('d','m', 'f') NOT NULL DEFAULT 'm';
+	
+UPDATE pastebin SET expires=DATE_ADD(posted, INTERVAL 1 MONTH) where expires is null and expiry_flag='m';

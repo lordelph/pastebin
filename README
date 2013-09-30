@@ -1,0 +1,33 @@
+PHP Code Pastebin
+=================
+
+This tool was orignally designed to enable collaborative code review via 
+the #php IRC channel. Inspired by www.parseerror.com/paste, but more 
+streamlined and capable of allowing collabation via IRC by allowing easy 
+modification of posted code. Another benefit is short urls - e.g. 
+http://pastebin.com/333
+
+Since then it has found uses in many developer communities and has been
+constantly improved.
+
+The latest version of this code can always be found at http://pastebin.com
+
+News about updates will be made on my blog http://blog.dixo.net
+
+If you have any fixes or feature suggestions, please get in touch.
+
+Paul Dixon
+
+email: paul@elphin.com
+msn  : lordelph@hotmail.com
+irc  : LordElph on EFNet and FreeNode
+blog : http://blog.dixo.net
+
+
+
+Further documentation
+=====================
+See INSTALL for installation instructions
+See UPGRADE for information on upgrading pastebin from an older verion
+See CHANGES for version history
+See LICENCE for licencing terms

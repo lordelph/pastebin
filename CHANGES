@@ -1,0 +1,29 @@
+Pastebin History
+=================
+v0.61 - 18-Jul-07 - minor bug fixes, GeSHi upgrading (finally adding mIRC!)
+                    auto-resizing textarea (hat tip to Carlos Palhares Júnior)
+v0.60 - 10-Jul-07 - Lots of changes inc faster file-based storage, translation
+                    support and ability to delete your own posts, also changed
+                    licence to Affero GPL
+v0.50 - 07-May-06 - Added option of expiry time to posts - see UPGRADE file
+v0.45 - 28-Apr-06 - Upgraded to latest version of GeSHi
+v0.44 - 26-Apr-06 - Copy to clipboard (IE only at the moment)
+v0.43 - 26-Apr-06 - Fixed download/diff links when script is renamed
+v0.42 - 23-Apr-06 - Bug fix to database wrapper
+v0.40 - 23-Apr-06 - Cleaned up code for wider release
+v0.31 - 14-Jul-05 - Fixed XSS Flaw
+v0.30 - 01-May-05 - Added Geshi text formatter, switch to GPL licence
+                    Added diffs
+                    Variety of minor layout changes
+v0.24 - 26-May-04 - finally added tab key support within textarea 
+                    (suggested by Droll a year ago!). Also removed the 
+                    80 col word wrapping
+v0.23 - 02-Mar-03 - add Postgres support (thanks Tim Hunter) and a few
+                    configuration options to make "non php" pastebins
+                    easy to set up.
+v0.22 - 01-Feb-03 - minor tweaks to maintain xhtml compliance
+v0.21 - 23-Jan-03 - prevented more mischief with long poster names
+v0.20 - 22-Jan-03 - heuristic keyword hyperlinking to php manual
+v0.12 - 19-Jan-03 - stripped html tags from poster name
+v0.11 - 14-Jan-03 - textarea entity encoding bug fix (thanks Greedo)
+v0.1  - 04-Sep-02 - First version
