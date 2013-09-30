@@ -110,7 +110,7 @@ class MySQL
 		return $this->dbresult;
 	}
 	
-	function dumpDiagnostics()
+	static function dumpDiagnostics()
 	{
 		global $CONF;
 		if ($CONF["maintainer_mode"])

@@ -149,7 +149,7 @@ class Pastebin
 		
 			
 		//set/clear the persistName cookie
-		if ($post['remember'])
+		if (isset($post['remember']))
 		{
 			$value=$post['poster'].'#'.$post['format'].'#'.$post['expiry'];
 			
@@ -276,14 +276,19 @@ class Pastebin
 		return $ok;
 	}
 
-        function outputExpiryHeaders($post)
+    function outputExpiryHeaders($post)
 	{
+		if (!isset($post['expires'])) {
+			//most probably a non-existent post
+			return;
+		}
+
 		$expires=$post['expires'];
 		$updated=isset($post['modified'])?$post['modified']:$post['posted'];
                      
 
-                $last_modified = gmdate('D, d M Y H:i:s', $updated) . ' GMT';
-                header("Last-Modified: $last_modified");
+        $last_modified = gmdate('D, d M Y H:i:s', $updated) . ' GMT';
+        header("Last-Modified: $last_modified");
 		
 		if (!$expires)
 		{
@@ -293,7 +298,7 @@ class Pastebin
 
 		if ($expires)
 		{
-                	$date = gmdate('D, d M Y H:i:s', $expires) . ' GMT';
+            $date = gmdate('D, d M Y H:i:s', $expires) . ' GMT';
 			header("Expires: $date"); 
 
 			$maxage=$expires-time();
@@ -422,7 +427,7 @@ class Pastebin
 			}
 				
 			//get formatted version of code
-			if (strlen($post['codefmt'])==0)
+			if (empty($post['codefmt']))
 			{
 				$geshi = new GeSHi($post['editcode'], $post['format']);
 				

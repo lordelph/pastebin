@@ -162,7 +162,7 @@ if (get_magic_quotes_gpc())
 ///////////////////////////////////////////////////////////////////////////////
 // user submitted the "private pastebin" form? redirect them...
 //
-if ($_GET['goprivate'])
+if (isset($_GET['goprivate']))
 {
 	$sub=trim(strtolower($_GET['goprivate']));
 	if (preg_match('/^[a-z0-9][a-z0-9\.\-]*[a-z0-9]$/i', $sub))
@@ -436,14 +436,14 @@ if (isset($_REQUEST["show"]))
         }
 	
 	//can we erase?
-	$page['can_erase']=(strlen($page['post']['token']) && ($page['token']==$page['post']['token']));
+	$page['can_erase']=(isset($page['post']['token']) && isset($page['token']) && ($page['token']==$page['post']['token']));
 	
 	//admin can always erase
 	if (isset($_COOKIE['admin']) && ($_COOKIE['admin']==md5($CONF['admin'])))
 		$page['can_erase']=true;
 	
 	//ensure corrent format is selected
-	$page['current_format']=$page['post']['format'];
+	$page['current_format']=isset($page['post']['format'])?$page['post']['format']:'';
 }
 else
 {
@@ -471,7 +471,7 @@ if (strlen($CONF['subdomain']))
 {
 	$page['title']=$CONF['subdomain']. ' private pastebin - collaborative debugging tool';
 }
-elseif ($page['current_format']!='text')
+elseif (($page['current_format']!='text') && isset($CONF['all_syntax'][$page['current_format']]))
 {
 	//give the page a title which features the syntax used..
 	$page['title']=$CONF['all_syntax'][$page['current_format']] . " ".$page['title'];

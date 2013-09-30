@@ -426,11 +426,11 @@ class DB
 		$file=$this->_idToPath($id, false);
 		
 		$rec=false;
-		if (file_exists($file))
+		if (is_file($file))
 		{
 			$rec=unserialize(file_get_contents($file));	
 			
-                        $rec['modified']=filemtime($file);			
+            $rec['modified']=filemtime($file);			
 			$rec['postdate'] = strftime('%a %e %b %H:%M', $rec['posted']);
 			
 			//check domain - only an admin can view a post on the
@@ -538,7 +538,7 @@ class DB
 
 
 	
-	function dumpDiagnostics()
+	static function dumpDiagnostics()
 	{
 		/*
 		global $CONF;

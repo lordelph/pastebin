@@ -274,7 +274,7 @@ google_color_text = "000000";
 ///////////////////////////////////////////////////////////////////////////////
 // show processing errors
 //
-if (count($pastebin->errors))
+if (!empty($pastebin->errors))
 {
 	echo '<h1>'.t('Errors').'</h1><ul>';
 	foreach($pastebin->errors as $err)
@@ -352,7 +352,7 @@ if (isset($_REQUEST["diff"]))
 if (isset($_GET['help']))
 	$page['posttitle']="";
 	
-if (strlen($page['post']['posttitle']))
+if (!empty($page['post']['posttitle']))
 {
 		echo "<h1>{$page['post']['posttitle']}";
 		if (strlen($page['post']['parent_pid']))
@@ -616,7 +616,7 @@ else
 {
 ?>
 <form name="editor" method="post" action="<?php echo $CONF['this_script']?>">
-<input type="hidden" name="parent_pid" value="<?php echo $page['post']['pid'] ?>"/>
+<input type="hidden" name="parent_pid" value="<?php echo isset($page['post']['pid'])?$page['post']['pid']:'' ?>"/>
 
 <br/> 
 <?php
@@ -650,17 +650,20 @@ foreach ($CONF['all_syntax'] as $code=>$name)
 
 <?php printf(t('To highlight particular lines, prefix each line with %s'),$CONF['highlight_prefix']); 
 
-$rows=substr_count($page['post']['editcode'], "\n"); 
+$rows=isset($page['post']['editcode']) ? substr_count($page['post']['editcode'], "\n") : 0; 
 $rows=min(max($rows,10),40);
 ?>
 <br/>
 <textarea id="code" class="codeedit" name="code2" cols="80" rows="<?php echo $rows ?>" onkeydown="return onTextareaKey(this,event)"><?php 
-echo htmlentities($page['post']['editcode'], ENT_COMPAT,$CONF['htmlentity_encoding']) ?></textarea>
+if (!empty($page['post']['editcode'])) {
+	echo htmlentities($page['post']['editcode'], ENT_COMPAT,$CONF['htmlentity_encoding']);
+}
+?></textarea>
 
 <div id="namebox">
 	
 <label for="poster"><?php echo t('Your Name')?></label><br/>
-<input type="text" maxlength="24" size="24" id="poster" name="poster" value="<?php echo $page['poster'] ?>" />
+<input type="text" maxlength="24" size="24" id="poster" name="poster" value="<?php echo isset($page['poster'])?$page['poster']:'' ?>" />
 <input type="submit" name="paste" value="<?php echo t('Send')?>"/>
 <br />
 <?php echo '<input type="checkbox" name="remember" value="1" '.$page['remember'].' />'.t('Remember me so that I can delete my post'); ?>
