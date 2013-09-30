@@ -1,0 +1,93 @@
+Requirements:
+=============
+- PHP 4.1 or higher (works with register-globals off)
+- MySQL database server (now optional)
+
+- For short url generation, Apache with mod_rewrite available. Something
+  like the following configuration options should be used
+
+    RewriteEngine on
+    RewriteRule /([a-z0-9]+) /pastebin.php?show=$1
+
+  If mod_rewrite is not available, modify the shorturl() function to 
+  generate 'normal' urls.
+
+- For instant "private" pastebins on subdomains, you'll need a wildcard
+  DNS entry pointing at your server and ensure that pastebin virtual host
+  is the first virtual host on your server. There may be other ways to 
+  accomplish this, this was just the easiest for me.
+  
+  
+Installation
+============
+
+The tarball contains two main directories. You'll need a virtual host
+set up something like this
+
+<VirtualHost *>
+    DocumentRoot /path/to/pastebin/public_html
+    ServerName your.domain.name.com
+
+    php_value include_path .:/path/to/pastebin/lib
+    php_value register_globals off
+    DirectoryIndex pastebin.php
+    RewriteEngine on
+    RewriteRule /([a-z0-9]+) /pastebin.php?show=$1
+
+</VirtualHost>  
+
+The main element here is to ensure that the lib directory is on the search
+path. You could alternatively place your settings in an .htaccess file if 
+you wish
+
+You can, if you wish, simply copy the contents of the lib directory into
+the same directory as pastebin.php, but it's better practice to prevent it
+being accessible via HTTP.
+
+
+If using the "mysql" storage engine, setup a new database with the following 
+table
+
+CREATE TABLE `pastebin` (
+	  `pid` int(11) NOT NULL auto_increment,
+	  `poster` varchar(16) default NULL,
+	  `posted` datetime default NULL,
+	  `code` text,
+	  `parent_pid` int(11) default '0',
+	  `format` varchar(16) default NULL,
+	  `codefmt` mediumtext,
+	  `codecss` text,
+	  `domain` varchar(255) default '',
+	  `expires` DATETIME,
+	  `expiry_flag` ENUM('d','m', 'f') NOT NULL DEFAULT 'm',
+	  
+	  PRIMARY KEY  (`pid`),
+	  KEY `domain` (`domain`),
+	  KEY `parent_pid` (`parent_pid`),
+	  KEY `expires` (`expires`)
+	);
+
+create table recent
+(
+	domain varchar(255),
+	pid int not null,
+	seq_no int not null,
+	
+	primary key(domain,seq_no)
+);
+
+
+If using the "file" storage engine, make sure the public_html/../posts 
+directory is writable by the webserver.
+
+Now you need to edit you base configuration file. Make a copy of 
+lib/config/default.conf.php	and call the file my.domain.conf.php
+
+For example, if your domain is superpaste.com, you'd call the file
+superpaste.com.conf.php
+
+Edit the file to configure the software to your requirements. You
+can create alternative configurations for other host names simply
+by creating a new configuration file.
+
+That's it, you're good to go. Good luck!
