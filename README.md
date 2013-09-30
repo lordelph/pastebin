@@ -31,17 +31,17 @@ pull request.
 
 Further documentation
 =====================
-See INSTALL for installation instructions
-See UPGRADE for information on upgrading pastebin from an older verion
-See CHANGES for version history
-See LICENCE for licencing terms
+* See INSTALL for installation instructions
+* See UPGRADE for information on upgrading pastebin from an older verion
+* See CHANGES for version history
+* See LICENCE for licencing terms
 
 Contact
 =======
-email: paul at elphin dot com
-blog: http:/blog.dixo.net
-twitter: @lordelph
-skype: lordelph
+* email: paul at elphin dot com
+* blog: http:/blog.dixo.net
+* twitter: @lordelph
+* skype: lordelph
 
 
 
