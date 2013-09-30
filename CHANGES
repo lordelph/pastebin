@@ -1,5 +1,6 @@
 Pastebin History
 =================
+v0.62 - 01-Oct-13 - re-release of original pastebin.com as a github repo
 v0.61 - 18-Jul-07 - minor bug fixes, GeSHi upgrading (finally adding mIRC!)
                     auto-resizing textarea (hat tip to Carlos Palhares Júnior)
 v0.60 - 10-Jul-07 - Lots of changes inc faster file-based storage, translation

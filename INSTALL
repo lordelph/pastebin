@@ -32,7 +32,8 @@ set up something like this
     php_value register_globals off
     DirectoryIndex pastebin.php
     RewriteEngine on
-    RewriteRule /([a-z0-9]+) /pastebin.php?show=$1
+    RewriteRule /([dmf][a-f0-9]+)$ /pastebin.php?show=$1
+
 
 </VirtualHost>  
 
