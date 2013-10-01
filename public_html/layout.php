@@ -335,7 +335,7 @@ if (isset($_REQUEST["diff"]))
 			$a1=explode("\n", $newpost['code']);
 			$a2=explode("\n", $oldpost['code']);
 			
-			$diff=new Diff($a2,$a1, 1);
+			$diff=new Elphin\Pastebin\Diff($a2,$a1, 1);
 			
 			echo "<table cellpadding=\"0\" cellspacing=\"0\" class=\"diff\">";
 			echo "<tr><td></td><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td></td></tr>";

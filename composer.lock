@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "d8a76a07bffd2492c24af1489d7d5352",
+    "hash": "5b4069b4ba95e18748f5938336a312bb",
     "packages": [
         {
             "name": "easybook/geshi",

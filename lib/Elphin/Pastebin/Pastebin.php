@@ -21,7 +21,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
-
+namespace Elphin\Pastebin;
 
 /**
 * Pastebin class models the pastebin data storage without getting involved
@@ -36,10 +36,10 @@ class Pastebin
 	* Constructor expects a configuration array which should contain
 	* the elements documented in config/default.conf.php
 	*/
-	function Pastebin(&$conf)
+	public function __construct($conf, $storage)
 	{
 		$this->conf=&$conf;
-		$this->db=new DB;	
+		$this->db=$storage;	
 	}
 	
 	/**
@@ -181,7 +181,6 @@ class Pastebin
 			$code=$post['code2'];
 			
 			//is it spam?
-			require_once('lib/pastebin/spamfilter.class.php');
 			$filter=new SpamFilter;
 			
 			if ($filter->canPost($post))

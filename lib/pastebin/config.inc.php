@@ -60,6 +60,6 @@ if (count($domain) > $CONF['base_domain_elements'])
 $CONF['subdomain']=$subdomain;
 
 //pull in required database class
-require_once('lib/pastebin/db.'.$CONF['dbsystem'].'.class.php');
+//require_once('lib/pastebin/db.'.$CONF['dbsystem'].'.class.php');
 
 ?>

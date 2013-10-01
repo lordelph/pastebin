@@ -32,9 +32,9 @@
 * All of the SQL used by the rest of the code is contained in here
 */
 
-require_once('pastebin/mysql.class.php');
+namespace Elphin\Pastebin;
 
-class DB extends MySQL
+class MysqlStorage extends MySQL
 {
 	var $dblink=null;
 	var $dbresult;

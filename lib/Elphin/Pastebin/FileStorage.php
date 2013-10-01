@@ -21,7 +21,8 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
- 
+namespace Elphin\Pastebin;
+
 /**
 * File-based database handler
 *
@@ -47,7 +48,7 @@ we can expire these on an as needed basis
 */
 
 
-class DB
+class FileStorage
 {
 	var $dblink=null;
 	var $dbresult;
@@ -56,7 +57,7 @@ class DB
 	/**
 	* Constructor - establishes DB connection
 	*/
-	function DB()
+	public function __construct()
 	{
 		
 		$this->postdir=$_SERVER['DOCUMENT_ROOT'].'/../posts/';
@@ -96,6 +97,8 @@ class DB
 	function _domainToPath($domain, $ensure_dirs=true)
 	{
 		$dir=$this->postdir.'/mru';
+
+//die($dir);
 		if ($ensure_dirs && !is_dir($dir)) mkdir($dir);
 			
 		$l=strlen($domain);

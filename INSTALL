@@ -22,60 +22,58 @@ Installation
 ============
 
 The tarball contains two main directories. You'll need a virtual host
-set up something like this
+set up something like this - there is a .htaccess file which configures
+other required settings
 
-<VirtualHost *>
-    DocumentRoot /path/to/pastebin/public_html
-    ServerName your.domain.name.com
+	<VirtualHost *>
+	    DocumentRoot /path/to/pastebin/public_html
+	    ServerName your.domain.name.com
 
-    php_value include_path .:/path/to/pastebin/lib
-    php_value register_globals off
-    DirectoryIndex pastebin.php
-    RewriteEngine on
-    RewriteRule /([dmf][a-f0-9]+)$ /pastebin.php?show=$1
-
-
-</VirtualHost>  
+	    <Directory /path/to/pastebin/public_html>
+	    	AllowOverride all
+	    </Directory>
+	</VirtualHost>  
 
 The main element here is to ensure that the lib directory is on the search
 path. You could alternatively place your settings in an .htaccess file if 
 you wish
 
-You can, if you wish, simply copy the contents of the lib directory into
-the same directory as pastebin.php, but it's better practice to prevent it
-being accessible via HTTP.
+Other dependancies are installed by composer - simple do this to install
+
+	cd /path/to/pastebin
+	php composer.phar install
 
 
 If using the "mysql" storage engine, setup a new database with the following 
 table
 
-CREATE TABLE `pastebin` (
-	  `pid` int(11) NOT NULL auto_increment,
-	  `poster` varchar(16) default NULL,
-	  `posted` datetime default NULL,
-	  `code` text,
-	  `parent_pid` int(11) default '0',
-	  `format` varchar(16) default NULL,
-	  `codefmt` mediumtext,
-	  `codecss` text,
-	  `domain` varchar(255) default '',
-	  `expires` DATETIME,
-	  `expiry_flag` ENUM('d','m', 'f') NOT NULL DEFAULT 'm',
-	  
-	  PRIMARY KEY  (`pid`),
-	  KEY `domain` (`domain`),
-	  KEY `parent_pid` (`parent_pid`),
-	  KEY `expires` (`expires`)
+	CREATE TABLE `pastebin` (
+		`pid` int(11) NOT NULL auto_increment,
+		`poster` varchar(16) default NULL,
+		`posted` datetime default NULL,
+		`code` text,
+		`parent_pid` int(11) default '0',
+		`format` varchar(16) default NULL,
+		`codefmt` mediumtext,
+		`codecss` text,
+		`domain` varchar(255) default '',
+		`expires` DATETIME,
+		`expiry_flag` ENUM('d','m', 'f') NOT NULL DEFAULT 'm',
+
+		PRIMARY KEY  (`pid`),
+		KEY `domain` (`domain`),
+		KEY `parent_pid` (`parent_pid`),
+		KEY `expires` (`expires`)
 	);
 
-create table recent
-(
-	domain varchar(255),
-	pid int not null,
-	seq_no int not null,
-	
-	primary key(domain,seq_no)
-);
+	create table recent
+	(
+		domain varchar(255),
+		pid int not null,
+		seq_no int not null,
+		
+		primary key(domain,seq_no)
+	);
 
 
 If using the "file" storage engine, make sure the public_html/../posts 

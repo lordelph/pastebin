@@ -35,6 +35,8 @@
 
 **/
 
+namespace Elphin\Pastebin;
+
 class Diff
 {
 	var $output='';

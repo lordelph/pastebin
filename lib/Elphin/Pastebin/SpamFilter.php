@@ -1,5 +1,7 @@
 <?php
 
+namespace Elphin\Pastebin;
+
 /**
 * Placeholder for your own spam rules
 */

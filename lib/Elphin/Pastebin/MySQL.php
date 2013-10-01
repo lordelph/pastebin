@@ -22,6 +22,7 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
  
+namespace Elphin\Pastebin;
 
 class MySQL
 {
@@ -31,7 +32,7 @@ class MySQL
 	/**
 	* Constructor - establishes DB connection
 	*/
-	function MySQL()
+	public function __construct()
 	{
 	}
 	

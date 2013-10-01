@@ -1,6 +1,9 @@
 {
     "require": {
         "easybook/geshi": "dev-master"
+    },
 
+    "autoload": {
+        "psr-0": {"Elphin\\Pastebin\\": "lib/"}
     }
 }

@@ -28,9 +28,6 @@
 //
 require_once('vendor/autoload.php');
 require_once('lib/pastebin/config.inc.php');
-//require_once('lib/geshi/geshi.php');
-require_once('lib/pastebin/diff.class.php');
-require_once('lib/pastebin/pastebin.class.php');
 
 /**
 * This array contains information needed to support a particular character set
@@ -176,7 +173,9 @@ if (isset($_GET['goprivate']))
 ///////////////////////////////////////////////////////////////////////////////
 // create our pastebin object
 //
-$pastebin=new Pastebin($CONF);
+$storage=new Elphin\Pastebin\FileStorage();
+
+$pastebin=new Elphin\Pastebin\Pastebin($CONF, $storage);
 
 
 
