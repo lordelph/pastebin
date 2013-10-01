@@ -25,7 +25,7 @@ $CONF=array();
 
 
 //include a default
-require_once('config/default.conf.php');
+require_once('lib/config/default.conf.php');
 
 //get domain parts and ensure no naughtiness is being attempted
 $domain=explode('.', preg_replace('/[^A-Za-z0-9-\.]/', '', $_SERVER['HTTP_HOST']));
@@ -46,7 +46,7 @@ for ($i=count($domain)-1; $i>=0; $i--)
 	$config=$domain[$i].$sep.$config;
 	$sep='.';
 	
-	@include_once("config/$config.conf.php");
+	@include_once("lib/config/$config.conf.php");
 }
 
 $subdomain="";
@@ -60,6 +60,6 @@ if (count($domain) > $CONF['base_domain_elements'])
 $CONF['subdomain']=$subdomain;
 
 //pull in required database class
-require_once('pastebin/db.'.$CONF['dbsystem'].'.class.php');
+require_once('lib/pastebin/db.'.$CONF['dbsystem'].'.class.php');
 
 ?>

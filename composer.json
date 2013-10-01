@@ -1,0 +1,6 @@
+{
+    "require": {
+        "easybook/geshi": "dev-master"
+
+    }
+}

@@ -26,10 +26,11 @@
 ///////////////////////////////////////////////////////////////////////////////
 // includes
 //
-require_once('pastebin/config.inc.php');
-require_once('geshi/geshi.php');
-require_once('pastebin/diff.class.php');
-require_once('pastebin/pastebin.class.php');
+require_once('vendor/autoload.php');
+require_once('lib/pastebin/config.inc.php');
+//require_once('lib/geshi/geshi.php');
+require_once('lib/pastebin/diff.class.php');
+require_once('lib/pastebin/pastebin.class.php');
 
 /**
 * This array contains information needed to support a particular character set

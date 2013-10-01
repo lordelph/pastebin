@@ -181,7 +181,7 @@ class Pastebin
 			$code=$post['code2'];
 			
 			//is it spam?
-			require_once('pastebin/spamfilter.class.php');
+			require_once('lib/pastebin/spamfilter.class.php');
 			$filter=new SpamFilter;
 			
 			if ($filter->canPost($post))

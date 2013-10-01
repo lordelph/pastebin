@@ -24,6 +24,9 @@
  
 echo "<?xml version=\"1.0\" encoding=\"".$charset_code[$charset]['http']."\"?>\n";
 
+if (!isset($pid)) {
+	$pid='';
+}
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
@@ -79,7 +82,7 @@ for a variety of options.</p>
  
         //TODO - roll this into the classes
         $count=0;
-	$bullets="";
+		$bullets="";
         $dir=$_SERVER['DOCUMENT_ROOT'].'/../abuse/';
         $d=dir($dir);
         while (false !== ($entry = $d->read())) 
@@ -127,7 +130,7 @@ for a variety of options.</p>
 <?php  
 	foreach($page['recent'] as $idx=>$entry)
 	{
-		if ($entry['pid']==$pid)
+		if (isset($entry['pid']) && ($entry['pid']==$pid))
 			$cls=" class=\"highlight\"";
 		else
 			$cls="";

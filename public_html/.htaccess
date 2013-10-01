@@ -1,0 +1,7 @@
+php_value include_path .:..
+php_value register_globals off
+DirectoryIndex pastebin.php
+RewriteEngine on
+RewriteRule ^([dmf][a-f0-9]+)$ pastebin.php?show=$1
+
+
