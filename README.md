@@ -18,6 +18,12 @@ improvements made.
 It's been in limbo for a while, but from Oct 2013 has been available on
 GitHub.
 
+Forks
+=====
+* http://bitbucket.org/j-samuel/paste - this is a fork from 2010 and has
+  seen a fair amount of activity since then. Worth checking out!
+
+
 To Do
 =====
 This started out as a single-script site back in 2002, and grew somewhat
