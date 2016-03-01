@@ -20,8 +20,7 @@ GitHub.
 
 Forks
 =====
-* http://bitbucket.org/j-samuel/paste - this is a fork from 2010 and has
-  seen a fair amount of activity since then. Worth checking out!
+* http://bitbucket.org/j-samuel/paste - this is a fork from 2010 and no update since 2015-04-19
 
 
 To Do
