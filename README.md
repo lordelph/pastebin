@@ -18,6 +18,11 @@ improvements made.
 It's been in limbo for a while, but from Oct 2013 has been available on
 GitHub.
 
+Forks
+=====
+* http://bitbucket.org/j-samuel/paste - this is a fork from 2010 and no update since 2015-04-19
+
+
 To Do
 =====
 This started out as a single-script site back in 2002, and grew somewhat
@@ -31,17 +36,17 @@ pull request.
 
 Further documentation
 =====================
-See INSTALL for installation instructions
-See UPGRADE for information on upgrading pastebin from an older verion
-See CHANGES for version history
-See LICENCE for licencing terms
+* See INSTALL for installation instructions
+* See UPGRADE for information on upgrading pastebin from an older verion
+* See CHANGES for version history
+* See LICENCE for licencing terms
 
 Contact
 =======
-email: paul at elphin dot com
-blog: http:/blog.dixo.net
-twitter: @lordelph
-skype: lordelph
+* email: paul at elphin dot com
+* blog: http:/blog.dixo.net
+* twitter: @lordelph
+* skype: lordelph
 
 
 
